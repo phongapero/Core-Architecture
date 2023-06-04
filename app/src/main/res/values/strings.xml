@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Core Source</string>
+    <string name="facebook_app_id">facebook_id</string>
+    <string name="loading">Loading</string>
+    <string name="this_action_can_contain_ads">(This action can contain ads)</string>
+    <string name="language">Language</string>
+    <string name="ad_upper_first">Ad</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="onboarding_title_1">Blood sugar tracker</string>
+    <string name="onboarding_content_1">Help you track blood sugar easily and keep tracklogs. Advanced graph report to identify trends in your glucose.</string>
+    <string name="onboarding_title_2">Unit Converter</string>
+    <string name="onboarding_content_2">Converts blood sugar unit: Converting blood sugar level to HbA1c level and vice versa</string>
+    <string name="photo">Photo\n</string>
+</resources>

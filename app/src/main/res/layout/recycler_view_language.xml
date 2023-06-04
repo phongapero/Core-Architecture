@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/bg_white_radius_10"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgIconLanguage"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/circleImageView"
+        tools:src="@drawable/ic_nazi_logo" />
+
+    <TextView
+        android:id="@+id/txtNameLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/montserrat_500"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgIconLanguage"
+        app:layout_constraintEnd_toStartOf="@+id/imgChooseLanguage"
+        app:layout_constraintStart_toEndOf="@+id/imgIconLanguage"
+        app:layout_constraintTop_toTopOf="@+id/imgIconLanguage"
+        tools:text="Viet Nam" />
+
+    <!--<ImageView
+           android:id="@+id/imgChooseLanguage"
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:layout_alignParentEnd="true"
+           android:layout_centerVertical="true"
+           android:src="@drawable/selector_checkbox_language"
+           android:visibility="visible"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,170 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+    id 'com.google.firebase.appdistribution'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'kotlin-parcelize'
+}
+
+android {
+    namespace 'com.example'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true    // Enable RS support
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        def formattedDate = new Date().format('MMM.dd.yyyy')
+        archivesBaseName = "CalculatorHide_v${versionName}(${versionCode})_${formattedDate}"
+
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    /*signingConfigs {
+        release {
+            storeFile file("key/apero.jks")
+            storePassword 'Apero@123'
+            keyAlias 'apero'
+            keyPassword 'Apero@123'
+        }
+    }*/
+
+    buildTypes {
+        /*release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }*/
+    }
+
+    flavorDimensions "type"
+    productFlavors {
+
+        appDev {
+            dimension "type"
+            buildConfigField("String", "FLAVOR_buildEnv", '"dev"')
+
+            manifestPlaceholders = [ad_app_id: "ca-app-pub-6548166688052880~8300982994"]
+            buildConfigField "String", "open_splash", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "inter_splash", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "native_language", "\"ca-app-pub-3940256099942544/2247696110\""
+            buildConfigField "String", "banner_onboarding", "\"ca-app-pub-3940256099942544/6300978111\""
+            buildConfigField "String", "inter_home", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "String", "banner_library", "\"ca-app-pub-3940256099942544/6300978111\""
+            buildConfigField "String", "native_home", "\"ca-app-pub-3940256099942544/2247696110\""
+            buildConfigField "String", "open_resume", "\"ca-app-pub-3940256099942544/1033173712\""
+            buildConfigField "Boolean", "ENV_TEST", "true"
+
+
+            buildConfigField "String", "BASE_URL", "\"https://yourapi.com/\""
+        }
+
+        appProd {
+            dimension "type"
+            buildConfigField("String", "FLAVOR_buildEnv", '"prod"')
+
+            manifestPlaceholders = [ad_app_id: "ca-app-pub-6548166688052880~8300982994"]
+            buildConfigField "String", "open_splash", "<Ads_ID>>"
+            buildConfigField "String", "inter_splash", "<Ads_ID>>"
+            buildConfigField "String", "native_language", "<Ads_ID>>"
+            buildConfigField "String", "banner_onboarding", "<Ads_ID>>"
+            buildConfigField "String", "inter_home", "<Ads_ID>>"
+            buildConfigField "String", "banner_library", "<Ads_ID>>"
+            buildConfigField "String", "native_home", "<Ads_ID>>"
+            buildConfigField "String", "open_resume", "<Ads_ID>>"
+            buildConfigField "Boolean", "ENV_TEST", "false"
+
+            buildConfigField "String", "BASE_URL", "\"https://yourapi.com/\""
+        }
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+
+        tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+            kotlinOptions {
+                jvmTarget = "1.8"
+            }
+        }
+    }
+
+    dependencies {
+        implementation 'androidx.core:core-ktx:1.10.0'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.google.android.material:material:1.9.0'
+        implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+        implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+        implementation "androidx.navigation:navigation-runtime-ktx:2.5.3"
+        implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
+        implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+        implementation 'com.google.code.gson:gson:2.10.1'
+        implementation 'com.github.bumptech.glide:glide:4.15.1'
+
+        // for apero ads
+        implementation 'com.facebook.shimmer:shimmer:0.5.0'
+        /*implementation 'apero-inhouse:apero-ads:1.0.3-alpha07'
+        implementation 'apero:language.first.open:1.1.5@aar'*/
+        implementation  'com.google.ads.mediation:applovin:11.9.0.0'
+        implementation  'com.google.ads.mediation:pangle:5.1.0.9.0'
+
+        // firebase
+        implementation platform('com.google.firebase:firebase-bom:31.5.0')
+        implementation 'com.google.firebase:firebase-analytics-ktx'
+        implementation 'com.google.firebase:firebase-config-ktx:21.4.0'
+
+        // dagger
+        implementation 'com.google.dagger:dagger-android:2.40.5'
+        implementation 'com.google.dagger:dagger-android-support:2.40.5'
+        kapt 'com.google.dagger:dagger-compiler:2.40.5'
+        kapt 'com.google.dagger:dagger-android-processor:2.40.5'
+
+        // ui
+        implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0-beta01'
+        implementation 'androidx.navigation:navigation-ui-ktx:2.6.0-beta01'
+        implementation 'androidx.navigation:navigation-runtime-ktx:2.5.3'
+
+        // room
+        implementation "androidx.room:room-ktx:2.5.1"
+        kapt "androidx.room:room-compiler:2.5.1"
+
+        // net
+        implementation "com.squareup.retrofit2:retrofit:2.9.0"
+        implementation  "com.squareup.okhttp3:okhttp:5.0.0-alpha.2"
+        implementation  "com.squareup.retrofit2:adapter-rxjava2:2.9.0"
+        implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
+
+        // Gson
+        implementation 'com.google.code.gson:gson:2.10.1'
+
+        implementation 'com.airbnb.android:lottie:6.0.0'
+
+        implementation 'androidx.preference:preference-ktx:1.2.0'
+
+        implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.0"
+    }
+}
