@@ -14,7 +14,7 @@ class OnBoardingPageAdapter(fm: FragmentManager, val list: ArrayList<Onboarding>
         val PAGE_INDEX_2 = 1
         val PAGE_INDEX_3 = 2
 
-        val NUMBER_PAGE = 2
+        val NUMBER_PAGE = 3
     }
 
     override fun getItem(position: Int): Fragment {
@@ -25,7 +25,7 @@ class OnBoardingPageAdapter(fm: FragmentManager, val list: ArrayList<Onboarding>
     }
 
     override fun getCount(): Int {
-        return NUMBER_PAGE
+        return list.size
     }
 
     override fun getPageTitle(position: Int): CharSequence {

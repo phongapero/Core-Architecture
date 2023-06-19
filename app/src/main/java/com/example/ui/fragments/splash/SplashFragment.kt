@@ -30,13 +30,8 @@ class SplashFragment : BaseFragment<SplashViewModel, FragmentSplashScreenBinding
     override fun initListener() {
         viewModel.haveRecordBloodSugar.observe(this.viewLifecycleOwner) { hasRecordData ->
             hasRecordData?.let {
-                if (hasRecordData) {
-                    val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
-                    findNavController().navigate(action)
-                } else {
-                    val action = SplashFragmentDirections.actionSplashFragmentToWelcomeFragment()
-                    findNavController().navigate(action)
-                }
+                val action = SplashFragmentDirections.actionSplashFragmentToHomeFragment()
+                findNavController().navigate(action)
             }
         }
     }

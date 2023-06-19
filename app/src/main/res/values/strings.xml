@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Core Source</string>
+    <string name="app_name">Phong Kaster</string>
     <string name="facebook_app_id">facebook_id</string>
     <string name="loading">Loading</string>
     <string name="this_action_can_contain_ads">(This action can contain ads)</string>
@@ -12,4 +12,11 @@
     <string name="onboarding_title_2">Unit Converter</string>
     <string name="onboarding_content_2">Converts blood sugar unit: Converting blood sugar level to HbA1c level and vice versa</string>
     <string name="photo">Photo\n</string>
+    <string name="dummy_title">Lorem Ipsum</string>
+    <string name="dummy_content">There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain…</string>
+    <string name="home">Home</string>
+    <string name="insight">Insight</string>
+    <string name="info">Info</string>
+    <string name="settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

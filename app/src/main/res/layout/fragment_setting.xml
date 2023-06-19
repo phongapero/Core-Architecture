@@ -6,17 +6,17 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/gray"
-        tools:context=".ui.fragments.home.HomeFragment">
+        tools:context=".ui.fragments.setting.SettingFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="@color/colorTextWhite"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="@color/colorTextWhite"
             android:textSize="28sp"
-            android:text="Home Fragment" />
+            android:text="Setting Fragment" />
 
     </LinearLayout>
 </layout>

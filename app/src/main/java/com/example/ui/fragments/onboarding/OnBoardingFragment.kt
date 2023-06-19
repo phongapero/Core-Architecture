@@ -26,11 +26,13 @@ class OnBoardingFragment : BaseFragment<BaseViewModel, FragmentOnboardingBinding
     override fun initView() {
 
         val list = ArrayList<Onboarding>()
-        val onboarding1 = Onboarding(R.drawable.img_onboard_1, requireContext().getString(R.string.onboarding_title_1), requireContext().getString(R.string.onboarding_content_1) )
-        val onboarding2 = Onboarding(R.drawable.img_onboard_2, requireContext().getString(R.string.onboarding_title_2), requireContext().getString(R.string.onboarding_content_2))
+        val onboarding1 = Onboarding(R.drawable.ic_nazi_logo, requireContext().getString(R.string.dummy_title), requireContext().getString(R.string.dummy_content) )
+        val onboarding2 = Onboarding(R.drawable.ic_nazi_logo, requireContext().getString(R.string.dummy_title), requireContext().getString(R.string.dummy_content))
+        val onboarding3 = Onboarding(R.drawable.ic_nazi_logo, requireContext().getString(R.string.dummy_title), requireContext().getString(R.string.dummy_content))
 
         list.add(onboarding1)
         list.add(onboarding2)
+        list.add(onboarding3)
 
 
 
@@ -59,7 +61,7 @@ class OnBoardingFragment : BaseFragment<BaseViewModel, FragmentOnboardingBinding
         })
 
         binding.tvNext.clickWithDebounce {
-            if (binding.viewPager.currentItem == OnBoardingPageAdapter.NUMBER_PAGE - 1) {
+            if (binding.viewPager.currentItem == adapter!!.count - 1) {
                 prefUtils.isShowOnBoardingFirstOpen = false
 
                 val action = OnBoardingFragmentDirections.actionOnBoardingFragmentToProfileEditFragment()

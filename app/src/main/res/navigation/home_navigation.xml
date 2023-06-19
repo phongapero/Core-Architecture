@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/home_navigation.xml">
+    android:id="@+id/home_navigation.xml"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.ui.fragments.home.HomeFragment"
+        android:label="HomeFragment" />
+    <fragment
+        android:id="@+id/insightFragment"
+        android:name="com.example.ui.fragments.insight.InsightFragment"
+        android:label="InsightFragment" />
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.ui.fragments.info.InfoFragment"
+        android:label="InfoFragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.ui.fragments.setting.SettingFragment"
+        android:label="SettingFragment" />
 </navigation>

@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.base.BaseViewModel
 import com.example.di.ViewModelFactory
 import com.example.di.key.ViewModelKey
-import com.example.ui.fragments.home.HomeViewModel
+import com.example.ui.fragments.container.ContainerViewModel
 import com.example.ui.fragments.splash.SplashViewModel
 import dagger.Binds
 import dagger.Module
@@ -25,8 +25,8 @@ abstract class ViewModelModule {
 
     @IntoMap
     @Binds
-    @ViewModelKey(HomeViewModel::class)
-    abstract fun provideHomeViewModel(homeViewModel: HomeViewModel): HomeViewModel
+    @ViewModelKey(ContainerViewModel::class)
+    abstract fun provideHomeViewModel(containerViewModel: ContainerViewModel): ContainerViewModel
 
     @IntoMap
     @Binds

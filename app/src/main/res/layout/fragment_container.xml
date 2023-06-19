@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="fragment"
+            type="com.example.ui.fragments.container.ContainerFragment" />
+
+        <variable
+            name="viewModel"
+            type="com.example.ui.fragments.container.ContainerViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray"
+        android:orientation="vertical">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:defaultNavHost="true"
+            app:layout_constraintBottom_toTopOf="@id/bottomNavigationView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/home_navigation" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginVertical="10dp"
+            android:background="@android:color/white"
+            app:elevation="0dp"
+            app:itemBackground="@android:color/transparent"
+            app:itemIconTint="@drawable/text_bottom_navigation_view_selector"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextColor="@drawable/text_bottom_navigation_view_selector"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/container_bottom_navigation" />
+    </LinearLayout>
+</layout>

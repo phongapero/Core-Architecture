@@ -14,7 +14,7 @@ class ProfileEditFragment : BaseFragment<ProfileViewModel, FragmentProfileEditBi
         binding.btnSaveProfile.clickWithDebounce {
             prefUtils.profileId = 1
 
-            val action = ProfileEditFragmentDirections.actionProfileEditFragmentToWelcomeFragment()
+            val action = ProfileEditFragmentDirections.actionProfileEditFragmentToContainerFragment()
             findNavController().navigate(action)
         }
     }

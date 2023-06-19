@@ -28,10 +28,11 @@ class OnBoardingPageFragment : BaseFragment<BaseViewModel, FragmentOnboardingPag
     }
 
     override fun initView() {
-        val photo = arguments?.getString(PHOTO)
+        val photo = arguments?.getInt(PHOTO)
         val title = arguments?.getString(TITLE)
         val content = arguments?.getString(CONTENT)
 
+        binding.elementPhoto.setImageResource(photo!!)
         binding.elementTitle.text = title
         binding.elementContent.text = content
     }
